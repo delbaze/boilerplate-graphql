@@ -1,0 +1,22 @@
+{
+  "name": "demo-graphql",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node-dev --exit-child --watch src --poll src/index.ts"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/server": "^4.6.0",
+    "@graphql-tools/load-files": "^6.6.1",
+    "@graphql-tools/merge": "^8.4.0",
+    "graphql": "^16.6.0",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.1.6",
+    "typeorm": "^0.3.14"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "typescript": "^5.0.4"
+  }
+}
