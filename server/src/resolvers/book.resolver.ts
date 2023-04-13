@@ -5,7 +5,7 @@ export default {
   Query: {
     books: async () => {
       return await new BookService().listBooks();
-    },
+    }
   },
 
   Mutation: {

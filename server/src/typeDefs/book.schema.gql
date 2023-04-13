@@ -9,4 +9,5 @@ type Query {
 
 type Mutation {
   addBook(title: String): Book
+
 }

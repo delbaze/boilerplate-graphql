@@ -1,0 +1,12 @@
+overwrite: true
+schema: "http://localhost:4000"
+documents: ["./src/graphql/*.query.ts", "./src/graphql/*.mutation.ts"]
+generates:
+  src/generated.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-resolvers'
+      - 'typescript-react-apollo'
+
+    
