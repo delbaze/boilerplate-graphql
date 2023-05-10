@@ -3,19 +3,27 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "ts-node-dev --exit-child --watch src --poll src/index.ts"
+    "start": "ts-node-dev --exit-child --watch src --poll src/index.ts",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "license": "MIT",
   "dependencies": {
     "@apollo/server": "^4.6.0",
     "@graphql-tools/load-files": "^6.6.1",
     "@graphql-tools/merge": "^8.4.0",
+    "argon2": "^0.30.3",
     "graphql": "^16.6.0",
+    "jsonwebtoken": "^9.0.0",
     "reflect-metadata": "^0.1.13",
     "sqlite3": "^5.1.6",
+    "ts-node-dev": "^2.0.0",
     "typeorm": "^0.3.14"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "3.3.1",
+    "@graphql-codegen/typescript": "3.0.4",
+    "@graphql-codegen/typescript-resolvers": "3.2.1",
+    "@types/jsonwebtoken": "^9.0.2",
     "@types/node": "^18.15.11",
     "typescript": "^5.0.4"
   }
