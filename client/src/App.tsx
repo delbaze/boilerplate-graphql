@@ -1,31 +1,18 @@
-import React from "react";
 import "./App.css";
-import { useQuery } from "@apollo/client";
+import { NavLink, Outlet } from "react-router-dom";
+import useAuth from "./hooks/useAuth";
 
-import { LIST_BOOKS } from "./graphql/book.query";
-import DemoLazyQuery from "./components/DemoLazyQuery";
-import DemoMutation from "./components/DemoMutation";
-import { useBooksQuery } from "./generated";
-
-interface IBook {
-  title: string;
-}
 function App() {
-  const { loading, error, data } = useBooksQuery();
-  // const { loading, error, data } = useQuery(LIST_BOOKS);
-
+  const { userInfos } = useAuth();
   return (
     <div className="App">
-      {loading ? (
-        <p>Chargement en cours</p>
-      ) : (
-        data?.books?.map((b, index: number) => (
-          <p key={index}>{b?.title}</p>
-        ))
+      <NavLink to={"/login"}>Se connecter</NavLink>
+      <NavLink to={"/books"}>Liste des livres</NavLink>
+      <NavLink to={"/logout"}>Se déconnecter</NavLink>
+      {Object.keys(userInfos).length > 0 && (
+        <p>connecté en tant que {userInfos?.email}</p>
       )}
-
-      <DemoLazyQuery />
-      <DemoMutation/>
+      <Outlet />
     </div>
   );
 }

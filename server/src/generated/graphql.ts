@@ -22,6 +22,7 @@ export type Book = {
 
 export type LoginInfo = {
   __typename?: 'LoginInfo';
+  email?: Maybe<Scalars['String']>;
   token?: Maybe<Scalars['String']>;
 };
 
@@ -44,6 +45,7 @@ export type MutationRegisterArgs = {
 export type Query = {
   __typename?: 'Query';
   books?: Maybe<Array<Maybe<Book>>>;
+  checkToken?: Maybe<Scalars['Boolean']>;
   login?: Maybe<LoginInfo>;
   users?: Maybe<Array<Maybe<User>>>;
 };
@@ -172,6 +174,7 @@ export type BookResolvers<ContextType = any, ParentType extends ResolversParentT
 };
 
 export type LoginInfoResolvers<ContextType = any, ParentType extends ResolversParentTypes['LoginInfo'] = ResolversParentTypes['LoginInfo']> = {
+  email?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   token?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
@@ -183,6 +186,7 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   books?: Resolver<Maybe<Array<Maybe<ResolversTypes['Book']>>>, ParentType, ContextType>;
+  checkToken?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
   login?: Resolver<Maybe<ResolversTypes['LoginInfo']>, ParentType, ContextType, RequireFields<QueryLoginArgs, 'infos'>>;
   users?: Resolver<Maybe<Array<Maybe<ResolversTypes['User']>>>, ParentType, ContextType>;
 };

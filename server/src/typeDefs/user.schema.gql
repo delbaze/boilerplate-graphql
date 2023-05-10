@@ -7,6 +7,7 @@ type User {
 type Query {
   users: [User]
   login(infos: UserLogin!): LoginInfo
+  checkToken: Boolean
 }
 
 type Mutation {
@@ -24,4 +25,5 @@ input UserRegister {
 }
 type LoginInfo {
   token: String
+  email: String
 }
